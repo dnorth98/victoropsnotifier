@@ -1,0 +1,18 @@
+{
+    "name": "signiant/victoropsnotifier",
+    "type": "library",
+    "keywords": ["victorops","victorops.com"],
+    "description": "REST API integration for VictorOps",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Dave North",
+            "email": "dnorth98@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-0": {
+            "Signiant": "src"
+        }
+    }
+}

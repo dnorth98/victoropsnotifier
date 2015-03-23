@@ -58,12 +58,12 @@ class CustomMessage implements Message
 
     public function entityIsHost($isHost)
     {
-	if ($isHost)
-	{
-        	$this->optionalFields['entity_is_host'] = 'y';
-	} else
-	{
-        	$this->optionalFields['entity_is_host'] = 'n';
-	}
+		if ($isHost)
+		{
+				$this->optionalFields['entity_is_host'] = 'y';
+		} else
+		{
+				$this->optionalFields['entity_is_host'] = 'n';
+		}
     }
 }
