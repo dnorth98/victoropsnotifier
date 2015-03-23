@@ -4,7 +4,7 @@ namespace Signiant\VictorOpsNotifer;
 
 use GuzzleHttp\Client;
 
-class MissingEndpointURLException extend Exception
+class MissingEndpointURLException extends Exception
 {
 }
 
