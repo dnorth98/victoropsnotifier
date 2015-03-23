@@ -8,6 +8,13 @@ class MissingEndpointURLException extends \Exception
 {
 }
 
+interface Transport
+{
+	// must POST the $message to the VictorOps REST endpoint 
+
+	public function send(Messages\Message $message);
+}
+
 class VictorOpsNotifer implements Transport
 {
     protected $endpoint_url;
