@@ -4,17 +4,6 @@ namespace Signiant\VictorOpsNotifer;
 
 use GuzzleHttp\Client;
 
-class MissingEndpointURLException extends \Exception
-{
-}
-
-interface Transport
-{
-	// must POST the $message to the VictorOps REST endpoint 
-
-	public function send(Messages\Message $message);
-}
-
 class VictorOpsNotifer implements Transport
 {
     protected $endpoint_url;
@@ -29,11 +18,6 @@ class VictorOpsNotifer implements Transport
 		$routing_key = $config['routing_key'];
 	}
 	
-	if (!array_key_exists("endpoint_url",$config))
-	{
-		throw (new MissingEndpointURLException());
-	}
-		
 	$endpointURL = $config['endpoint_url'] . "/" . $routing_key;
 		
         $this->endpoint = $endpointURL;
