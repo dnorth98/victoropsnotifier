@@ -1,4 +1,5 @@
 <?php
+
 namespace Signiant\VictorOpsNotifer;
 
 interface Transport
