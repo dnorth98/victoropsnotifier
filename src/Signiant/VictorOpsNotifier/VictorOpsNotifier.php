@@ -10,24 +10,24 @@ class MissingEndpointURLException extends \Exception
 
 class VictorOpsNotifer implements Transport
 {
-	protected $endpoint_url;
-	protected $routing_key;
+    protected $endpoint_url;
+    protected $routing_key;
 
     public function __construct($config)
     {
-		$routing_key = "everyone";
-				
-		if (array_key_exists("routing_key",$config))
-		{
-				$routing_key = $config['routing_key'];
-		}
+	$routing_key = "everyone";
+			
+	if (array_key_exists("routing_key",$config))
+	{
+		$routing_key = $config['routing_key'];
+	}
+	
+	if (!array_key_exists("endpoint_url",$config))
+	{
+		throw (new MissingEndpointURLException());
+	}
 		
-		if (!array_key_exists("endpoint_url",$config))
-		{
-			throw (new MissingEndpointURLException());
-		}
-		
-		$endpointURL = $config['endpoint_url'] . "/" . $routing_key;
+	$endpointURL = $config['endpoint_url'] . "/" . $routing_key;
 		
         $this->endpoint = $endpointURL;
 
