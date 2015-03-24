@@ -3,6 +3,11 @@ namespace Signiant\VictorOps;
 
 use GuzzleHttp\Client;
 
+
+class MissingEndpointURLException extends \Exception
+{
+}
+
 class Notifier implements Transport
 {
     public function __construct($config)
@@ -12,6 +17,11 @@ class Notifier implements Transport
 	if (array_key_exists("routing_key",$config))
 	{
 		$routing_key = $config['routing_key'];
+	}
+
+	if (!array_key_exists("endpoint_url",$config))
+	{
+		throw (new MissingEndpointURLException());
 	}
 	
 	$endpointURL = $config['endpoint_url'] . "/" . $routing_key;
