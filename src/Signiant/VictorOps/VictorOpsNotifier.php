@@ -1,9 +1,9 @@
 <?php
-namespace Signiant\VictorOpsNotifer;
+namespace Signiant\VictorOps;
 
 use GuzzleHttp\Client;
 
-class VictorOpsNotifer implements Transport
+class Notifer implements Transport
 {
     public function __construct($config)
     {

@@ -1,5 +1,5 @@
 <?php
-namespace Signiant\VictorOpsNotifer;
+namespace Signiant\VictorOps;
 
 interface Transport
 {
