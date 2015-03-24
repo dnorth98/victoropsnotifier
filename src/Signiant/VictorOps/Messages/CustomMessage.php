@@ -1,5 +1,5 @@
 <?php
-namespace namespace Signiant\VictorOps\Messages;
+namespace Signiant\VictorOps\Messages;
 
 class CustomMessage implements Message
 {
