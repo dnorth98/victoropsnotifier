@@ -3,11 +3,13 @@
     "type": "library",
     "keywords": ["victorops","victorops.com"],
     "description": "REST API integration for VictorOps",
+    "homepage": "https://github.com/dnorth98/victoropsnotifier",
     "license": "MIT",
     "authors": [
         {
             "name": "Dave North",
-            "email": "dnorth98@gmail.com"
+            "email": "dnorth98@gmail.com",
+            "role": "Developer"
         }
     ],
     "require": {
