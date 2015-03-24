@@ -6,9 +6,6 @@ use GuzzleHttp\Client;
 
 class VictorOpsNotifer implements Transport
 {
-    protected $endpoint_url;
-    protected $routing_key;
-
     public function __construct($config)
     {
 	$routing_key = "everyone";
