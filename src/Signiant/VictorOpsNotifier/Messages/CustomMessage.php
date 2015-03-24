@@ -1,5 +1,4 @@
 <?php
-
 namespace Signiant\VictorOpsNotifer\Messages;
 
 class CustomMessage implements Message

@@ -1,5 +1,4 @@
 <?php
-
 namespace Signiant\VictorOpsNotifer;
 
 use GuzzleHttp\Client;

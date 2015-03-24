@@ -1,5 +1,4 @@
 <?php
-
 namespace Signiant\VictorOpsNotifer\Messages;
 
 interface Message
