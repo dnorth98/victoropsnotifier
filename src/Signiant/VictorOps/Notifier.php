@@ -3,7 +3,7 @@ namespace Signiant\VictorOps;
 
 use GuzzleHttp\Client;
 
-class Notifer implements Transport
+class Notifier implements Transport
 {
     public function __construct($config)
     {
