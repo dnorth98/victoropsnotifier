@@ -15,7 +15,7 @@ class Notifier implements Transport
 	$routing_key = "everyone";
 
 	if (is_array($config))
-	{			
+	{
 		if (array_key_exists("routing_key",$config))
 		{
 			$routing_key = $config['routing_key'];
@@ -29,20 +29,17 @@ class Notifier implements Transport
 	{
 		throw (new MissingEndpointURLException('Config must be an array',2));
 	}
-	
+
 	$endpointURL = $config['endpoint_url'] . "/" . $routing_key;
-		
+
         $this->endpoint = $endpointURL;
 
-        $this->client = new Client();
+        $this->client = new Client(['base_uri' => $endpointURL]);
     }
 
     public function send(Messages\Message $message)
     {
-        $request = $this->client->createRequest('POST', $this->endpoint, [
-            'json' => $message()
-        ]);
-        $this->client->send($request);
+        $this->client->post($this->endpoint, ['json' => $message()]);
     }
 
 }

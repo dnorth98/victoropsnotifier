@@ -2,7 +2,7 @@
 PHP module to send notification messages to VictorOps via the REST integration.
 
 
-## Installing 
+## Installing
 
 Via [Composer][1]
 
@@ -23,11 +23,11 @@ use Signiant\VictorOps\Notifier;
 use Signiant\VictorOps\Messages\CustomMessage;
 
 // Only the message level is mandatory
-$voMsg = new CustomMessage('INFO');
+$voMsg = new Signiant\VictorOps\Messages\CustomMessage('INFO');
 
 $voConfig = ['endpoint_url' => 'YOUR_VO_REST_ENDPOINT', 'routing_key' => 'YOUR_VO_ROUTING_KEY'];
-voEndpoint = new Notifier($voConfig);
-voEndpoint->send(voMsg);
+$voEndpoint = new Signiant\VictorOps\Notifier($voConfig);
+$voEndpoint->send(voMsg);
 ```
 
 ### Customise the message
@@ -43,7 +43,7 @@ parameters allow you to customise the message.
 6. Entity Is Host Setting
 
 ```
-<?php 
+<?php
 
 use Signiant\VictorOps\Messages\CustomMessage;
 
